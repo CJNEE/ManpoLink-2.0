@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light-card dark:bg-dark-card;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500;
+}
+
+/* Custom animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* Chart styles */
+.chart-container {
+  @apply relative w-full h-full;
+}
+
+/* Map styles */
+.map-container {
+  @apply w-full h-96 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700;
+}
+
+/* Table styles */
+.table-responsive {
+  @apply overflow-x-auto;
+}
+
+.table-responsive table {
+  @apply w-full border-collapse;
+}
+
+.table-responsive th {
+  @apply bg-light-card dark:bg-dark-card sticky top-0 px-4 py-3 text-left font-semibold text-xs uppercase tracking-wider;
+}
+
+.table-responsive td {
+  @apply px-4 py-3 border-b border-gray-200 dark:border-gray-700;
+}
+
+.table-responsive tr:hover {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200;
+}
+
+.badge-error {
+  @apply bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200;
+}
+
+.badge-info {
+  @apply bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-red-700 dark:hover:bg-red-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 dark:bg-gray-700 text-light-text dark:text-dark-text hover:bg-gray-300 dark:hover:bg-gray-600;
+}
+
+.btn-danger {
+  @apply bg-error text-white hover:bg-red-600;
+}
+
+/* Card styles */
+.card {
+  @apply bg-light-card dark:bg-dark-card rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4;
+}
+
+.card-hover {
+  @apply hover:shadow-md hover:border-primary/50 transition-all duration-200;
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-light-text dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.input-field::placeholder {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4;
+}
+
+/* Leaflet map z-index fix - keep map behind modals and other UI */
+.leaflet-container {
+  z-index: 1 !important;
+}
+
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+/* Ensure modals stay on top of everything including maps */
+.fixed.z-50 {
+  z-index: 9999 !important;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply bg-gray-300 dark:bg-gray-700 rounded animate-pulse;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hide-mobile {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    @apply hidden;
+  }
+}
